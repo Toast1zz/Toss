@@ -21,6 +21,8 @@ swift test --build-system native   # double-tap state machine
 
 The first build downloads TDLibFramework (a prebuilt TDLib xcframework, about 300 MB) once; SwiftPM caches it. After that a release build compiles only Toss's own sources and takes a few seconds. Nothing in TDLib is compiled locally.
 
+For a universal (Apple silicon + Intel) build: `TOSS_ARCHS="arm64 x86_64" ./scripts/build-app.sh`.
+
 `build-app.sh` signs with your Apple Development identity when there is one, so Keychain keeps trusting the app across rebuilds. Override with `TOSS_SIGNING_IDENTITY`, or set `TOSS_BUNDLE_ID` / `TOSS_APP_PATH` for a side-by-side test build.
 
 ## First run

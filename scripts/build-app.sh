@@ -7,7 +7,8 @@
 # Environment:
 #   TOSS_BUNDLE_ID         bundle id (default app.toast.toss); use a unique one for test builds
 #   TOSS_APP_PATH          output bundle (default dist/Toss.app)
-#   TOSS_VERSION           marketing version (default 1.0)
+#   TOSS_VERSION           marketing version (default 1.0.0)
+#   TOSS_ARCHS             architectures, e.g. "arm64 x86_64" for a universal build (default: this Mac's)
 #   TOSS_SIGNING_IDENTITY  codesign identity (default: first stable local identity, else ad-hoc)
 #
 # Usage: ./scripts/build-app.sh
@@ -21,12 +22,23 @@ cd "$ROOT"
 SWIFT_BUILD=(swift build --build-system native -c release)
 BUNDLE_ID="${TOSS_BUNDLE_ID:-app.toast.toss}"
 APP="${TOSS_APP_PATH:-$ROOT/dist/Toss.app}"
-VERSION="${TOSS_VERSION:-1.0}"
+VERSION="${TOSS_VERSION:-1.0.0}"
 BUILD_NUMBER="$(git rev-list --count HEAD 2>/dev/null || echo 1)"
 
 echo "== building =="
-"${SWIFT_BUILD[@]}"
-BIN="$("${SWIFT_BUILD[@]}" --show-bin-path)/Toss"
+if [[ -n "${TOSS_ARCHS:-}" ]]; then
+    # One build per architecture (TDLibFramework ships arm64 and x86_64), then lipo.
+    SLICES=()
+    for arch in $TOSS_ARCHS; do
+        "${SWIFT_BUILD[@]}" --arch "$arch"
+        SLICES+=("$("${SWIFT_BUILD[@]}" --arch "$arch" --show-bin-path)/Toss")
+    done
+    BIN="$ROOT/.build/Toss-universal"
+    lipo -create "${SLICES[@]}" -output "$BIN"
+else
+    "${SWIFT_BUILD[@]}"
+    BIN="$("${SWIFT_BUILD[@]}" --show-bin-path)/Toss"
+fi
 
 echo "== assembling $APP =="
 rm -rf "$APP"
