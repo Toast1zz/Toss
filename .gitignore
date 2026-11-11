@@ -1,0 +1,30 @@
+# Build output
+.build/
+dist/
+DerivedData/
+*.xcarchive
+Resources/AppIcon.icns
+
+# Xcode / SwiftPM user state
+.swiftpm/
+xcuserdata/
+*.xcuserstate
+*.xcscmblueprint
+
+# Secrets and local config (Telegram credentials belong in Keychain, never here)
+.env
+.env.*
+*.env
+*.p12
+*.cer
+*.mobileprovision
+*.provisionprofile
+
+# Logs, recordings, scratch
+*.log
+*.mov
+*.mp4
+tdlib/
+
+# macOS
+.DS_Store

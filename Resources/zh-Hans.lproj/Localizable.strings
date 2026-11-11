@@ -1,0 +1,79 @@
+/* Drop panel */
+"Drop here" = "拖到这里";
+"Drop to %@" = "发给 %@";
+"Sending to %@" = "正在发给 %@";
+"Sent to %@" = "已发给 %@";
+"Not sent to %@" = "没能发给 %@";
+"Me" = "自己";
+
+/* Send errors */
+"Not allowed in this chat" = "这个聊天不允许发送";
+"Too many requests" = "发送太频繁";
+"File too large" = "文件太大";
+"Chat not found" = "找不到这个聊天";
+"Unknown error" = "未知错误";
+"Not signed in" = "还没登录";
+"Logged out" = "已退出登录";
+"Nothing to send" = "没有可发送的内容";
+"Can't read %@" = "读不了 %@";
+
+/* Setup */
+"Connect Telegram" = "连接 Telegram";
+"Your Phone Number" = "手机号";
+"Enter Code" = "输入验证码";
+"Two-Step Verification" = "两步验证";
+"Email" = "邮箱";
+"All Set" = "完成";
+"Continue" = "继续";
+"Code" = "验证码";
+"Password" = "密码";
+"Resend Code" = "重新发送";
+"Change API ID" = "更换 API ID";
+"Choose Chats" = "选择聊天";
+"Start Over" = "重新开始";
+"Connecting…" = "正在连接…";
+"Check Telegram on your other device." = "验证码已发到你其他设备上的 Telegram。";
+"Check your SMS." = "验证码已通过短信发送。";
+"You'll get a call." = "你会接到一个电话。";
+"Couldn't save to Keychain." = "无法保存到钥匙串。";
+"API ID or hash is invalid." = "API ID 或 API Hash 不对。";
+"Invalid phone number." = "手机号不对。";
+"This phone number is banned." = "这个手机号已被封禁。";
+"Wrong code." = "验证码不对。";
+"Code expired. Request a new one." = "验证码过期了，请重新获取。";
+"Wrong password." = "密码不对。";
+"Invalid email or code." = "邮箱或验证码不对。";
+"Too many attempts. Try again later." = "尝试次数太多，请稍后再试。";
+"This number has no Telegram account." = "这个手机号没有 Telegram 账号。";
+"Sign in with the official Telegram app first, then try again." = "请先用官方 Telegram App 登录一次，再回来重试。";
+
+/* Settings */
+"Menu Bar" = "菜单栏";
+"Add Chat…" = "添加聊天…";
+"Remove" = "移除";
+"Send images as photos" = "图片以照片形式发送";
+"Play sound" = "播放提示音";
+"Open at login" = "登录时打开";
+"Account" = "账号";
+"Log Out" = "退出登录";
+"Log out of Telegram?" = "退出 Telegram 登录？";
+"Search" = "搜索";
+"Done" = "完成";
+"Toss Settings" = "Toss 设置";
+
+/* Menu */
+"Sign In…" = "登录…";
+"Settings…" = "设置…";
+"Quit Toss" = "退出 Toss";
+
+/* Clipboard */
+"Send to %@" = "发给 %@";
+"Send clipboard" = "发送剪贴板";
+"Type shortcut" = "按下快捷键";
+"Used by another app" = "已被其他 App 占用";
+"Double-tap ⌥" = "连按两下 ⌥";
+"Shortcut" = "快捷键";
+"Or press" = "或按";
+"Needs Input Monitoring" = "需要“输入监控”权限";
+"Allow…" = "允许…";
+"Confirm before sending" = "发送前确认";
